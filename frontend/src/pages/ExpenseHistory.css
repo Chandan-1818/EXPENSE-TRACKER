@@ -1,0 +1,230 @@
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.history-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.history-header p {
+  color: var(--color-text-secondary);
+}
+
+.history-card {
+  padding: 0;
+}
+
+.filters-row {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.search-box {
+  flex: 1;
+  max-width: 400px;
+}
+
+.filter-box {
+  width: 200px;
+}
+
+/* Reset margin for inputs in filters */
+.filters-row .input-group,
+.filters-row .select-group {
+  margin-bottom: 0;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.data-table th,
+.data-table td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.data-table th {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tx-desc-cell {
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--color-background);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.type-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.type-badge.income {
+  background-color: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.type-badge.expense {
+  background-color: var(--color-danger-light);
+  color: var(--color-danger);
+}
+
+.amount-cell {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.amount-cell.success {
+  color: var(--color-success);
+}
+
+.actions-cell {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-tertiary);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-btn:hover {
+  background-color: var(--color-background);
+}
+
+.action-btn.view:hover {
+  color: var(--color-info);
+}
+
+.action-btn.edit:hover {
+  color: var(--color-primary);
+}
+
+.action-btn.delete:hover {
+  color: var(--color-danger);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--color-text-tertiary);
+  font-weight: 500;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .filters-row {
+    flex-direction: column;
+  }
+  .search-box, .filter-box {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Hide table on mobile, show cards instead */
+  .table-responsive {
+    display: none;
+  }
+
+  .tx-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .tx-card-item {
+    background-color: var(--color-background);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+  }
+
+  .tx-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+  }
+
+  .tx-card-title {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .tx-card-date {
+    font-size: 0.75rem;
+    color: var(--color-text-tertiary);
+  }
+
+  .tx-card-amount {
+    font-weight: 700;
+    font-size: 1.125rem;
+  }
+
+  .tx-card-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .tx-card-status {
+    font-size: 0.75rem;
+    color: var(--color-text-tertiary);
+    margin-bottom: 0.75rem;
+  }
+
+  .tx-card-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+}
+
+/* Hide cards container on desktop/tablet */
+.tx-cards-container {
+  display: none;
+}

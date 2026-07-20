@@ -1,0 +1,45 @@
+.main-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--color-background);
+}
+
+/* Modern Glass theme layout adjustments */
+[data-theme='modern-glass'] .main-layout {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 50%, #f0e6fa 100%);
+}
+
+[data-theme='modern-glass'] .page-content {
+  padding: 12px 12px 12px 0;
+}
+
+[data-theme='modern-glass'] .main-content {
+  padding-top: 0;
+}
+
+/* Hide desktop sidebar on tablet and mobile */
+.desktop-sidebar-wrapper {
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .desktop-sidebar-wrapper {
+    display: none;
+  }
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.page-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--page-padding);
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}

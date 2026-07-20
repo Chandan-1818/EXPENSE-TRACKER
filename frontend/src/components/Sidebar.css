@@ -1,0 +1,104 @@
+.sidebar {
+  width: 260px;
+  background-color: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all var(--transition-normal);
+}
+
+/* Modern Glass theme special effects */
+[data-theme='modern-glass'] .sidebar {
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  margin: 12px;
+  box-shadow: var(--shadow-md);
+  height: calc(100% - 24px);
+}
+
+[data-theme='modern-glass'] .sidebar-logo {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme='modern-glass'] .nav-link {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 14px;
+  margin: 0 12px;
+  padding: 12px 16px;
+}
+
+[data-theme='modern-glass'] .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: translateX(4px);
+}
+
+[data-theme='modern-glass'] .nav-link.active {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+  border-left: 4px solid white;
+}
+
+.sidebar-logo {
+  padding: 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sidebar-logo h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.5px;
+}
+
+.sidebar-logo h2 span {
+  color: var(--color-primary);
+}
+
+.sidebar-nav {
+  padding: 1.5rem 1rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.nav-icon {
+  font-size: 1.25rem;
+}
+
+.nav-link:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text-primary);
+}
+
+.nav-link.active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* In a full app, we would implement a mobile drawer */
+  }
+}

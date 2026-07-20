@@ -1,0 +1,79 @@
+.tabs-container {
+  width: 100%;
+}
+
+.tabs-list {
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 1rem;
+  overflow-x: auto; /* For responsive layout */
+  scrollbar-width: none; /* Firefox */
+}
+
+.tabs-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.tab-btn:hover:not(.disabled) {
+  color: var(--color-text-primary);
+}
+
+.tab-btn.active {
+  color: var(--color-primary);
+}
+
+.tab-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tab-icon {
+  display: inline-flex;
+}
+
+/* Animated Indicator */
+.tab-indicator {
+  position: absolute;
+  bottom: -1px;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+  border-radius: 2px 2px 0 0;
+}
+
+.tabs-panels {
+  position: relative;
+}
+
+.tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
